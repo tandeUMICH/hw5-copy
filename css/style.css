@@ -21,11 +21,12 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
 }
 
 .nav_links{
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
 }
 
@@ -52,7 +53,8 @@ header{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-content: center;
     flex-basis: 450px;
 }
 
@@ -82,12 +84,14 @@ VIEW FOR SCREEN SIZE 900px and above (Desktop View)
 @media screen and (min-width: 900px) {
     header{
         display: flex;
+        flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-between;
     }
 
     .nav_links{
         display: flex;
+        flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -133,8 +137,17 @@ VIEW FOR PRINTING WEBSITE IN PORTRAIT MODE
         background-image: none;
     }
 
-    .nav_links {
+    nav{
         display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .nav_links{
+        display: flex;
+        width: 100%;
+        flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-around;
     }
