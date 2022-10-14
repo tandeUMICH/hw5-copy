@@ -1,3 +1,7 @@
+/*
+DEFAULT VIEW (mobile view)
+*/
+/*Make animation for logo*/
 @keyframes logoMove{
     from {width: 25px; opacity: 0;}
     to {width: 475px; opacity: 1;}
@@ -17,7 +21,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
 }
 
 .nav_links{
@@ -48,6 +52,7 @@ header{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+    justify-content: flex-end;
     flex-basis: 450px;
 }
 
@@ -71,6 +76,9 @@ header{
     justify-content: center;
 }
 
+/*
+VIEW FOR SCREEN SIZE 900px and above (Desktop View)
+*/
 @media screen and (min-width: 900px) {
     header{
         display: flex;
@@ -81,6 +89,7 @@ header{
     .nav_links{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
 
     .card{
@@ -102,9 +111,58 @@ header{
     }
 }
 
+/* If user has the accesibility option to reduce motion, don't play the animation */
 @media (prefers-reduced-motion: reduce){
     #logo{
         animation: none;
+    }
+}
+
+
+/*
+VIEW FOR PRINTING WEBSITE IN PORTRAIT MODE 
+*/
+@media print and (orientation: portrait){
+    /*Remove animation for printing*/
+    #logo{
+        animation: none;
+    }
+
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    /*Remove gallery from view*/
+    #gallery {
+        visibility: hidden;
+    }
+    .gallery {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    /*Add emojis to end of second item in list on cards*/
+    .card li:nth-child(2)::after{
+        content: "\01F44D" /*Unicode representing thumbs up*/
     }
 }
 
