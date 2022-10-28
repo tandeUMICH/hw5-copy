@@ -126,7 +126,7 @@ VIEW FOR SCREEN SIZE 900px and above (Desktop View)
 /*
 VIEW FOR PRINTING WEBSITE IN PORTRAIT MODE 
 */
-@media print and (orientation: portrait){
+@media print {
     /*Remove animation for printing*/
     #logo{
         animation: none;
